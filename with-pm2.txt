@@ -1,0 +1,39 @@
+sudo apt update && sudo apt upgrade -y
+sudo apt install nodejs -y
+node --version
+
+
+git clone https://github.com/asthakwh/deploy-Node.js-app-on-EC2-with-Nginx-with-asg
+cd /deploy-Node.js-app-on-EC2-with-Nginx-with-asg
+sudo apt install npm -y
+npm install express
+ npm --version
+
+sudo node app.js
+
+sudo npm install pm2 -g
+pm2 start app.js
+pm2 status
+
+http://<public-ip>:3000
+
+sudo apt install nginx -sudo systemctl status nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+
+
+sudo nano /etc/nginx/sites-enabled/default
+#sudo nano /etc/nginx/nginx.conf
+
+Inside the server block, added the following configuration:
+location / {
+proxy_pass http://localhost:3000;
+}
+sudo systemctl restart nginx
+
+Deployed a Node.js application on AWS EC2
+Used PM2 to manage the application process
+Configured Nginx as a reverse proxy
+Made the application production-ready and accessible on port 80
+
