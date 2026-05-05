@@ -1,3 +1,6 @@
+## keeps apps running 24/7, enables automatic restarts on crashes, and offers built-in load balancing
+
+
 sudo apt update && sudo apt upgrade -y
 sudo apt install nodejs -y
 node --version
