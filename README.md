@@ -3,12 +3,13 @@ add instance
 add security group
 
 Load Balancers → Create → Application LB
-# ALB Security Group — Inbound
 
-HTTP  port 80   from 0.0.0.0/0
-HTTPS port 443  from 0.0.0.0/0
+ ALB Security Group — Inbound
 
-# ALB Security Group — Outbound
+        HTTP  port 80   from 0.0.0.0/0
+        HTTPS port 443  from 0.0.0.0/0
+
+ ALB Security Group — Outbound
 
 All traffic → 0.0.0.0/0
 
@@ -20,8 +21,8 @@ Create AMI from your running instance then Create Launch Template
 
 Paste User Data script -according to instance
 
-############################################################
-        #!/bin/bash
+
+            #!/bin/bash
             set -e
         # Update system
 
@@ -49,7 +50,7 @@ Paste User Data script -according to instance
             pm2 start app.js
             pm2 startup systemd
         pm2 save
-# Configure Nginx reverse proxy
+        # Configure Nginx reverse proxy
 
             sudo bash -c 'cat > /etc/nginx/sites-available/default <<EOF
             server {
@@ -66,6 +67,7 @@ Paste User Data script -according to instance
                 }
             }
             EOF'
+
 # Restart Nginx
 
             sudo systemctl restart nginx
