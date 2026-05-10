@@ -40,7 +40,7 @@ Paste User Data script -according to instance
             cd /home/ubuntu
         # Clone your repo
 
-            git clone https://github.com/asthakwh/deploy-Node.          js-app-on-EC2-with-Nginx-with-asg.git app
+                git clone https://github.com/asthakwh/deploy-Node.js-app-on-EC2-with-Nginx-with-asg.git app
             cd app
         # Install dependencies
 
